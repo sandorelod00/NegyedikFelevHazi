@@ -1,0 +1,52 @@
+<div class="container table-body">
+    <div class="row row-cols-1 row-cols-md-3" *ngIf = "isAdmin && tables">
+        <ng-container *ngFor="let table of tables">
+            <ng-container *ngTemplateOutlet="tableCard;context{table : table}" ></ng-container>
+        </ng-container>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3" *ngIf="!isAdmin && myTables">
+        <ng-container *ngFor="let table of myTables">
+            <ng-container *ngTemplateOutlet="tableCard;context{table : table}" ></ng-container>
+        </ng-container>
+    </div>
+</div>  
+
+<ng-template #popContent>
+    <div class="popover">
+        <h6 class="popover-title"><b>Table Informations:</b></h6>
+        <div class="container popover-content">
+            <p *ngIf="isAdmin">Table id: {{tableInfo.id}}</p>
+            <p>Room : {{tableInfo.room}}</p>
+            <p>Status : {{getStyleClass(tableInfo.isReserved)}}</p>
+            <p *ngIf="isAdmin">User Name: {{tableInfo.userName}}</p>
+
+            <div *ngIf="orderInfo">
+                <p>Order Informations : </p>
+                <p>Order id : {{orderInfo.id}}</p>
+                <h6 class="popover-footer">Total Cost : ${{orderInfo.price}} </h6>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+
+<ng-template #tableCard let-table="table">
+    <button type="button" class="btn btn-outline.secondary"
+        (mouseover)="toggleWithTable(table)"
+            
+            [ngbPopover]="popContent"
+            [openDelay]="100" [closeDelay]="300" triggers="mouseenter:mouseleave" 
+            >
+            <div class="card" [ngClass]="getStyleClass(table.isReserved)">
+                <img src="../../../assets/images/table.png" class="card-img-top" alt="table-image" >
+                <div class="card-body">
+                <h6 *ngIf="isAdmin">Table Id : {{table.id}}</h6>
+                    <h5 class="card-title">{{getTypeOfTable(table)}} Table For {{table.room}} People</h5>
+                  
+                    <button *ngIf="!table.isReserved" class="btn btn-add" (click) = "reseveTable(table)">Reserve</button>
+                    <button *ngIf="table.isReserved && !isOrder" class="btn btn-add" (click) = "reseveTable(table)">Cancle Reservation</button>
+                    <button *ngIf="table.isReserved && isOrder && isAdmin" class="btn btn-add" (click) = "payTable(table)">Pay</button>
+            </div>
+        </div>
+        </button>
+</ng-template>

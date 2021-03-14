@@ -1,0 +1,36 @@
+<div class="container login-body">
+<div class="card">
+  <div class="card-header">
+    <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="isLogin">
+      <label ngbButtonLabel class="btn-warning">
+        <input ngbButton type="radio" [value]="true"> <h3>Login</h3>
+      </label>
+      <label ngbButtonLabel class="btn-success">
+        <input ngbButton type="radio" [value]=false> <h3>Sign Up</h3>
+      </label>
+  </div>
+
+  <div card-body>
+  
+    <div >
+      <label for="userNameInput"><h3>User name</h3></label>
+      <input type="text" class="form-control" [(ngModel)]="userName" id="userNameInput" placeholder="ExampleUserName"> 
+    </div>
+
+    <div >
+      <label for="passwordInput"><h3>Password</h3></label>
+      <input type="password" class="form-control" [(ngModel)]="password" id="passwordInput" placeholder="password">
+    </div>
+ 
+    <div *ngIf="!isLogin" >
+      <label for="confirmPasswordInput"><h3>Confirm Password</h3></label>
+      <input type="password" class="form-control" [(ngModel)]="confirmPassword" id="confirmPasswordInput" placeholder="confirm password">
+    </div>
+
+  </div>
+
+  <div class="card-footer">
+    <button *ngIf="isLogin" type="submit" class="btn btn-add" (click)="login()"><h3>Sign In</h3></button>
+    <button *ngIf="!isLogin" type="submit" class="btn btn-add" (click)="signUp()"><h3>Sign Up</h3></button>
+  </div>
+</div>  

@@ -1,0 +1,42 @@
+.item-modal{
+    background-color: #2e011a;
+    color: wheat;
+}
+
+.item-modal-body{
+    background-color: #2e011a;
+}
+
+label{
+    margin: 2%;
+}
+
+input{
+    color: wheat;
+    background-color: #2e011a;
+    border-radius: 10%;
+    border-color: wheat;
+    margin: 2%
+}
+
+.number-input{
+    width: 4rem;
+    border-radius: 15%;
+}
+
+select{
+    color: wheat;
+    background-color: #2e011a;
+    border-radius: 10%;
+    border-color: wheat;
+    margin: 2%
+}
+option{
+    color: wheat;
+    background-color: #2e011a;
+}
+
+.btn{
+    color: black;
+    font-size: 100%;
+ }

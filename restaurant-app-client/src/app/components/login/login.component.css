@@ -1,0 +1,30 @@
+.login-body{
+    background-color: #2e011a;
+    border-radius: 5%;
+    padding: 5%;
+}
+
+.card{
+        background-color: #343a40;
+        color: wheat;
+}
+
+.btn{
+    color: black;
+    font-size: 100%;
+ }
+
+.btn-add{
+    color: wheat;
+     background-color: #2e011a;
+}
+
+label{
+    margin: 2%;
+}
+
+input{
+    color: wheat;
+    background-color: #2e011a;
+    border-color: wheat;
+}

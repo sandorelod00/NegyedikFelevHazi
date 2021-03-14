@@ -1,0 +1,54 @@
+<div class="order">
+<div class="modal-header">
+    <h3>Check out!</h3>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+</div>
+
+<div class="modal-body">
+
+    <div *ngIf="!reservedTable">
+        <label for="orderTypeSelect" ><h3>Order Type</h3> </label>
+        <select id="orderTypeSelect" [(ngModel)] = "orderType" >
+            <option value="ONLINE">Take Away</option>
+            <option value="OFFLINE">In Place</option>
+        </select>
+    </div>
+    <br>
+    <div *ngIf='orderType === "OFFLINE" && !reservedTable'>
+        <label for="tableSelect"><h3>Table:</h3> </label>
+        <select id="tableSelect" [(ngModel)]="selectedTableId" >
+            <option *ngIf="isAdmin" value="0">Table was reserved</option>
+            <option *ngFor="let table of freeTables" value="{{table.id}}">
+                {{getTypeOfTable(table)}} Table, Room for people : {{table.room}} 
+            </option>
+        </select>
+        <br>
+        <div *ngIf="selectedTableId == 0">
+            <label for="OldTableIdInput"><h3>Enter Table Id:</h3> </label>
+            <input  type="number" id="OldTableIdInput" [(ngModel)] = "oldTableId" class="number-input">
+        </div>
+    </div>
+
+    <div *ngIf='orderType === "ONLINE" && isAdmin' class="form-group">
+        <label for="userIdInput"><h3>User id:</h3></label>
+        <input type="number" id="userIdInput" [(ngModel)] = "userId" class="number-input">
+    </div>
+
+    <ul class="list-group bill">
+        <li class="list-group-item bill-item" *ngFor="let item  of cart">
+            <div class="d-flex justify-content-between">
+                <b>{{item.menuItemName}}</b>
+                <i><b>$ {{item.price}}</b></i>
+                <button class="btn btn-danger" (click)=removeFromCart(item)>Remove</button>
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+    <div class="modal-footer">
+        <button class="btn btn-success" (click)=order()>Purchase</button>
+    </div>
+</div>

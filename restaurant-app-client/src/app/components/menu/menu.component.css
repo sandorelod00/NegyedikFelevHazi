@@ -1,0 +1,40 @@
+.list-group-item{
+    background-color: transparent;
+    border: none;
+}
+
+input{
+    width: 3rem;
+    background-color: transparent;
+    color: white;
+}
+
+h1{
+    color: wheat;
+    border-bottom: dotted;
+    border-top: dotted;
+    border-color: wheat;
+    color: wheat;
+    
+}
+
+.menu-body{
+    margin-top: 5%;
+    background-color: #2e011a;
+    border-radius: 5%;
+    padding: 5%;
+}
+
+th{
+    width: 20%;
+    color: wheat;
+}
+
+td{
+    color: wheat;
+}
+
+.btn-add{
+    color: rgb(206, 205, 204);
+     background-color: #2e011a;
+}

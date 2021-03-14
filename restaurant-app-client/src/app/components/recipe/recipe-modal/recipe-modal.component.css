@@ -1,0 +1,41 @@
+.recipe-modal{
+    background-color: #2e011a;
+    color: wheat;
+}
+
+.recipe-modal-body{
+    background-color: #2e011a;
+}
+
+label{
+    margin: 2%;
+}
+
+th{
+    width: 20%;
+    color: wheat;
+}
+
+td{
+    color: wheat;
+}
+
+.btn{
+    color: black;
+    font-size: 100%;
+ }
+ 
+ .btn-add{
+     color: wheat;
+      background-color: #2e011a;
+ }
+
+
+
+ input{
+     color: wheat;
+     background-color: transparent;
+     border-radius: 15%;
+     border-color: wheat;
+     margin: 2%
+ }

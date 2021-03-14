@@ -1,0 +1,49 @@
+
+.order{
+    background-color: #2e011a;
+    color: wheat;
+}
+
+.modal-body{
+   background-color:  #343a40;
+}
+
+.list-group-item{
+    background-color: transparent;
+    border: none;
+}
+
+.bill{
+    background-color:  #2e011a;
+}
+
+.bill-item{
+    border-width: 3px;
+    margin: 5px;
+    border-bottom: dotted;
+}
+
+
+input{
+    color: wheat;
+    background-color: transparent;
+    border-radius: 2%;
+    border-color: wheat;
+    margin: 2%
+}
+.number-input{
+    width: 4rem;
+    border-radius: 15%;
+}
+
+select{
+    color: wheat;
+    background-color: transparent;
+    border-radius: 5%;
+    border-color: wheat;
+    margin: 2%
+}
+option{
+    color: wheat;
+    background-color: #2e011a;
+}

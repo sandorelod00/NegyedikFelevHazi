@@ -1,0 +1,18 @@
+.menu-modal{
+    background-color: #2e011a;
+    color: wheat;
+}
+
+.menu-modal-body{
+    background-color: #343a40;
+}
+
+.list-group-item{
+    background-color: transparent;
+    border: none;
+}
+
+.btn-add{
+    color:wheat;
+     background-color:  #343a40;
+}

@@ -1,0 +1,70 @@
+
+<div class="menu-modal">
+    <div class="modal-header">
+        <h4>Add new {{title}} to the menu</h4>
+        <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="modal-body menu-modal-body">
+        <div class="container">
+            <div class="row">
+
+                <div class="col">
+                    All {{title}}
+                    <ul class="list-group" *ngIf="recipeList">
+                        <li class="list-group-item" *ngFor="let r of recipeList" id="{{r.id}}">
+                            <div class="d-flex justify-content-between">
+                                {{r.name}}
+                                <button class="btn btn-warning" (click)=addToMenu(r.id)>Add</button>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="list-group" *ngIf="alcoholicDrinkList">
+                        <li class="list-group-item" *ngFor="let drink of alcoholicDrinkList" id={{drink.id}}>
+                            <div class="d-flex justify-content-between">
+                                {{drink.name}}
+                                <button class="btn btn-warning" (click)=addToMenu(drink.id)>Add</button>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="list-group" *ngIf="nonAlcoholicDrinkList">
+                        <li class="list-group-item" *ngFor="let drink of nonAlcoholicDrinkList " id={{drink.id}}>
+                            <div class="d-flex justify-content-between">
+                                {{drink.name}}
+                                <button class="btn btn-warning" (click)=addToMenu(drink.id)>Add</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col">
+                    On menu
+                    <ul class="list-group" *ngIf="recipeList">
+                        <li class="list-group-item" *ngFor ="let item of onMenuItemList">
+                            <div class="d-flex justify-content-between">
+                                {{item.recipeDto.name}}
+                                <button class="btn btn-danger" (click)=removeFromMenu(item)>Remove</button>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="list-group" *ngIf="!recipeList">
+                        <li class="list-group-item" *ngFor ="let item of onMenuItemList">
+                            <div class="d-flex justify-content-between"> 
+                                {{item.itemDto.name}}
+                                <button class="btn btn-danger" (click)=removeFromMenu(item)>Remove</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-add" (click)="activeModal.close('Close click')">Close</button>
+    </div>
+
+</div>

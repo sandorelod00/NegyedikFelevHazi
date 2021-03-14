@@ -1,0 +1,15 @@
+
+.navbar-dark .navbar-nav .nav-link {
+    color: wheat;
+}
+.navbar-dark .navbar-brand {
+    color: wheat;
+}
+
+.btn-warning{
+    color: black;
+}
+.btn-add{
+    color: wheat;
+     background-color: #2e011a;
+}

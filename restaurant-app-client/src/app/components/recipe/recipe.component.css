@@ -1,0 +1,34 @@
+h1{
+    color: wheat;
+    border-bottom: dotted;
+    border-top: dotted;
+    border-color: wheat;
+    color: wheat;
+    
+}
+
+.recipe-body{
+    background-color: #2e011a;
+    border-radius: 5%;
+    padding: 5%;
+    margin-top: 5%;
+}
+
+th{
+    width: 20%;
+    color: wheat;
+}
+
+td{
+    color: wheat;
+}
+
+.btn{
+   color: black;
+   font-size: 100%;
+}
+
+.btn-add{
+    color: wheat;
+     background-color: #2e011a;
+}

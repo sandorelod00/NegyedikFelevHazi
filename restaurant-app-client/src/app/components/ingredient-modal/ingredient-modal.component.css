@@ -1,0 +1,32 @@
+.ingredient-modal{
+    background-color: #2e011a;
+    color: wheat;
+}
+
+.ingredient-modal-body{
+    background-color: #2e011a;
+}
+
+label{
+    margin: 2%;
+}
+
+input{
+    color: wheat;
+    background-color: #2e011a;
+    border-radius: 10%;
+    border-color: wheat;
+    margin: 2%
+}
+
+select{
+    color: wheat;
+    background-color: #2e011a;
+    border-radius: 10%;
+    border-color: wheat;
+    margin: 2%
+}
+option{
+    color: wheat;
+    background-color: #2e011a;
+}

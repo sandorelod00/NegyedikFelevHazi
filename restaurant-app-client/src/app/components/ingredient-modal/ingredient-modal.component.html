@@ -1,0 +1,31 @@
+<div class="ingredient-modal">
+    <div class="modal-header">
+        <h4>Add Ingredient</h4>
+        <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        <label for="ingredientSelect">Select ingredient:</label>
+        <select [(ngModel)]="selectedItemName" id="ingredientSelect" >
+            <option id="new" value="new">new</option>
+            <option *ngFor="let item of items" id="item.id" value={{item.name}}>
+                {{item.name}}
+            </option>
+        </select>
+        <div *ngIf="selectedItemName === 'new'">
+            <label for="newIngredientName">Name:</label>
+            <input type="text" id="newIngredientName" [(ngModel)]="newName">
+        </div>
+        
+        <div>
+            <label for="quantityNeeded">Needed Quaintity</label>
+            <input type="number" id="quantityNeeded" [(ngModel)]="neededQuantity" style="width: 5rem; border-radius: 15%;">
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn btn-success" (click) ="saveIngredient()">Save</button>
+    </div>
+</div>

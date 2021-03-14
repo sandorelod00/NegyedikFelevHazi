@@ -1,0 +1,26 @@
+<div class="container recipe-body">
+    <h1>Recipes</h1>
+
+
+        <table *ngIf ="recipes ; else loadingBlock" class="table table-striped table-dark col-lg-12 table-responsive-md">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>price</th>
+                    <th>Available</th>
+                    <th><button class="btn btn-add" (click)="openRecipeModalForm()"><b>Add New Recipe</b></button></th>
+                </tr>
+            </thead>
+            <tr *ngFor="let recipe of recipes" id={{recipe.id}}>
+                <td>{{recipe.name}}</td>
+                <td>{{recipe.price}}</td>
+                <td>{{recipe.isAvailable}}</td>
+                <td>
+                    <button class="btn btn-warning" (click)="openRecipeModalForm(recipe)"><b>Details</b></button>
+                    <button class="btn btn-danger" (click)="deleteRecipe(recipe)"><b>Delete</b></button>
+                </td>
+            </tr>
+        </table>
+
+        <ng-template #loadingBlock>Pending</ng-template>
+</div>

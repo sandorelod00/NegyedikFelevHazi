@@ -1,0 +1,59 @@
+.Reserved{
+    background-color: rgb(240, 102, 102);
+}
+
+.Free{
+    background-color: rgb(109, 255, 109);
+}
+
+.table-body{
+    background-color: #2e011a;
+    border-radius: 5%;
+    padding: 5%;
+    margin-top: 5%;
+}
+
+.card{
+    color: #740240;
+}
+
+.btn-add{
+    color: rgb(206, 205, 204);
+     background-color: #2e011a;
+}
+
+.popover{
+    width: 10rem;
+    color: wheat;
+    background-color: #2e011a;
+    padding: 5%;
+    border: 5%;
+    margin: 5%;
+    border-style: solid;
+    border-color: wheat;
+    border-width: 5px;
+}
+
+.popover-title{
+    padding: 5%;
+    border: 5%;
+    margin: 5%;
+    border-bottom: dotted;
+    border-color: wheat;
+    display: flex;
+    align-items: center;
+}
+.popover-footer{
+    padding: 5%;
+    border: 5%;
+    margin: 5%;
+    border-top: dashed;
+    border-color: wheat;
+}
+
+
+p{
+    border-bottom: dotted;
+    border-color: wheat;
+    border-width: 1px;
+}
